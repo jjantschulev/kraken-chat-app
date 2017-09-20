@@ -9,10 +9,10 @@
 
   <!-- <icon src="icon.png" /> -->
   <access origin="jantschulev.ddns.net*"/> 
-  <name>Calc+</name>
+  <name>Kraken Chat</name>
 
   <description>
-      Simple black calculator.
+      Large Group Chat.
   </description>
 
   <author>
