@@ -1,0 +1,159 @@
+body {
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 28px;
+  --accent: rgb(255, 180, 30);
+  overflow: hidden;
+}
+
+* {-webkit-user-select: none; -ms-user-select: none; -moz-user-select: none; -o-user-select: none;}
+
+#main {
+  width: 100%;
+  height: calc(100vh - 200px);
+  overflow: scroll;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.message_container {
+  padding: 0;
+  margin: 0;
+  display: block;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  overflow: auto;
+}
+
+.message {
+  padding: 10px 30px;
+  margin: 5px 20px;
+  border-radius: 30px;
+  display: inline-block;
+  max-width: 70%;
+  user-select: text;
+}
+
+.user_message {
+  background-color: var(--accent);
+  color: white;
+  float: right;
+}
+
+.foreign_message {
+  background-color: #cecece;
+  color: black;
+  float: left;
+}
+
+.message_info {
+  padding: 0px 30px;
+  margin: 0px;
+  display: inline-block;
+  max-width: 60%;
+  float: none;
+  font-size: 12px;
+  color: #878787;
+}
+
+.message_container:active + .message_info_container{
+  display: block;
+}
+
+.message_info_container {
+  display: none;
+}
+
+.foreign_message_info {
+  float: left;
+}
+.user_message_info {
+  float: right;
+}
+
+#down_arrow {
+  position: fixed;
+  left: 50%;
+  bottom: 120px;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  transform: translateX(-50%);
+  display: none;
+}
+path{
+  fill: var(--accent);
+}
+
+#input_area {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
+#message_input {
+  margin: 0;
+  padding: 25px;
+
+  outline: none;
+  border: none;
+
+  font-size: 28px;
+  width: calc(100% - 160px);
+}
+
+#send_button {
+  outline: none;
+
+  padding: 25px;
+  margin: 0;
+
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+
+  background-color: var(--accent);
+  box-sizing: border-box;
+  border: 8px solid var(--accent);
+
+  width: 160px;
+
+  animation-name: buttonOut;
+  animation-duration: 0.4s;
+
+}
+
+#send_button:hover {
+  border-color: inherit;
+
+  animation-name: buttonIn;
+}
+
+#send_button:active {
+  background-color: inherit;
+}
+
+@keyframes  buttonIn{
+  0% {
+    border-color: var(--accent);
+  }
+  100% {
+    border-color: inherit;
+  }
+}
+@keyframes  buttonOut{
+  100% {
+    border-color: var(--accent);
+  }
+  0% {
+    border-color: inherit;
+  }
+}
